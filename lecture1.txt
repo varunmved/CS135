@@ -1,0 +1,10 @@
+#lecture 1
+#1/26
+
+Three major concepts
+    4 formal languages
+        Finite automata (FA) for RL
+        Push down Automata (PDA) for CFL
+        Bounded TM for CSL
+        Turing Machine (TM) for REL
+    
