@@ -1,6 +1,6 @@
 #lang racket
 
-(define (fourac a c)(* * 4 a c))
+(define (fourac a c)(* 4 a c))
 
 (define (bsqr b)(expt b b))
 

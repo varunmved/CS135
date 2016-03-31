@@ -1,0 +1,18 @@
+#lang racket
+
+;;min-max
+
+;Find Maximum of a list
+
+(define (min-max lst)
+  (if (null? lst)
+      '()
+      (let helper ((lst (cdr lst)) (min (car lst)) (max (car lst)))
+        (if (null? lst)
+            (list min max)
+            (let ((c (car lst)))
+              (helper (cdr lst)
+                      (if (< c min) c min)
+                      (if (> c max) c max)))))))
+
+(min-max '(12 5 8 79))

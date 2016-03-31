@@ -1,0 +1,7 @@
+#lang racket
+;6. [Louden 11. 8 (i)] Write a higher-order function inc_n that takes an integer n as a parameter 
+;and returns an n-th increment function, which increments its parameter by n.
+;Thus in Scheme syntax, ((inc_n 3) 2) =5 and ((inc_n -2) 3) =1. Suggest function name: (incnth n)
+
+(define incth
+

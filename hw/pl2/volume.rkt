@@ -9,17 +9,18 @@
 
 ;;big R
 (define (rcalc r1 r2)
-    (*(r2 - r1) (* .5 (+ r2 r1))))
+    (* (* pi (r2 + r1)) (r2 - r1)))
 
 ;;sphere-vol
 (define (spherevol r)
     (/(* 4 pi (expt r 3)) 3))
 
 ;;shell-vol
+;;2pir * h * (r2-r1)
 (define (shellvol h r1 r2)
-    (* * h rcalc(r1 r2) bigR(r1 r2)))
+    (* h rcalc r1 r2))
 
 ;;test
-(shellvol 3 2 3)
-;;predicate function close
+(spherevol 3)
+(shellvol 3 1 5)
 
