@@ -15,4 +15,5 @@
                       (if (< c min) c min)
                       (if (> c max) c max)))))))
 
-(min-max '(12 5 8 79))
+(min-max '(1 2 3))
+(min-max '(11 -2 33))

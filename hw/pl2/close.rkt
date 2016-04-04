@@ -11,13 +11,7 @@
 
 ;;close function that passes in a 'c' value
 (define (close2 a b c)
-(cond
-    [(< (- a b) c) #t]
-    [(< (+ a b) c) #t]
-    [(= (- a b) c) #t]
-    [(> (- a b) c) #f]))
+(<(abs(- a b)) c))
 
-
-(close .499 .5)
-(close2 .499 .5 .001)
-
+(close2 3 5 4)
+(close2 3 4 1)

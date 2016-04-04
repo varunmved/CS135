@@ -7,9 +7,10 @@
 ;how many
 (define (how-many a b c)
 (cond
-    [(> (expt b b) (fourac a c)) 2]
-    [(= (expt b b) (fourac a c)) 1]
-    [(< (expt b b) (fourac a c)) 0]))
+    [(> (* b b) (fourac a c)) 2]
+    [(= (* b b) (fourac a c)) 1]
+    [(< (* b b) (fourac a c)) 0]))
 
 (how-many 1 0 -1)
+(how-many 2 4 2)
 
