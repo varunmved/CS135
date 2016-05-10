@@ -1,2 +1,5 @@
 textbook
 *.pdf
+hw/pl4/test
+hw/pl4/python/venv
+

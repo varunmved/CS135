@@ -5,14 +5,13 @@ function match(lookahead,curr)
 {
     if (curr === lookahead)
     {
-
+        
         //todo
     }
     else
     {
         console.log("error in match");
     }
-
 }
 
 function expr(curr)
@@ -27,7 +26,7 @@ function expr(curr)
 
     else
     {
-        console.log("error");
+        console.log("error in expr");
     }
 }
 
@@ -46,10 +45,12 @@ function g(curr)
         factor(curr);
         h(curr);
     }
+    /*
     else
     {
-        console.log("error");
+        console.log("error in g");
     }
+    */
 
 }
 
@@ -62,7 +63,7 @@ function term(curr)
     }
     else
     {
-        console.log("error");
+        console.log("error in term");
     }
 }
 
@@ -91,7 +92,7 @@ function factor(curr)
     }
     else
     {
-        console.log("error");
+        console.log("error in factor");
     }
 }
 
@@ -107,7 +108,7 @@ function addOp(curr)
     }
     else
     {
-        console.log("error");
+        console.log("error in addop");
     }
 
 }
@@ -124,7 +125,7 @@ function mulOp(curr)
     }
     else
     {
-        console.log("error");
+        console.log("error in mul");
     }
 
 }
@@ -164,24 +165,6 @@ function digit(curr)
         case '3':
             match('3', curr);
             break;
-        case '4':
-            match('4', curr);
-            break;
-        case '5':
-            match('5', curr);
-            break;
-        case '6':
-            match('6', curr);
-            break;
-        case '7':
-            match('7', curr);
-            break;
-        case '8':
-            match('8', curr);
-            break;
-        case '9':
-            match('9', curr);
-            break;
         case '$':
             console.log("$ found");
             break;
@@ -191,7 +174,11 @@ function digit(curr)
     }
 }
 
+function run(curr)
+{
 
-curr = "1-2*2";
-expr(curr);
+    expr(curr);
+}
+var a = ['2','*','2'];
 
+a.forEach(run);
