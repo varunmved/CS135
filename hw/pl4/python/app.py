@@ -69,7 +69,8 @@ class ExpressionEvaluator:
 
     def _expect(self, token_type):
         if not self._accept(token_type):
-            raise SyntaxError('Expected ' + token_type)
+            #raise SyntaxError('Expected ' + token_type)
+            return "not valid"
 
     def expr(self):
         '''
@@ -115,8 +116,8 @@ class ExpressionEvaluator:
             elif op == 'DIVIDE':
                 term_value /= self.factor()
             else:
-                raise SyntaxError('Should not arrive here ' + op)
-
+                #raise SyntaxError('Should not arrive here ' + op)
+                return "not valid"
         return term_value
 
     def factor(self):
@@ -142,11 +143,12 @@ class ExpressionEvaluator:
             return expr_value
         elif self._accept('DOLLAR'):
             #if it's a dollar we can break
-            raise SyntaxError('Expected $')
+            #raise SyntaxError('Expected $')
             return "not valid"
         else:
             #return "not valid"
-            raise SyntaxError('Expect NUMBER or LPAREN')
+            return "not valid"
+            #raise SyntaxError('Expect NUMBER or LPAREN')
 
 @app.route('/')
 def parse():

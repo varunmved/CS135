@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Recursive Descent Parser</title>
+    </head>
+    <body>
+        <h1>Recursive Descent Parser in python</h1>
+            Enter a string to see if it's valid:<br>
+        <input type="text" name="token" id="token">
+        <button onclick="setup(document.getElementById('token').value)">Submit</button>  
+        <p id="demo">Input string:  has errors found</p>    
+    <script>
+function setup(token){
+    var stringLength = token.length;//set string length
+    var stringArray = new Array(stringLength);//initialize array to length of string
+    
+    for(var i=0;i<stringLength;i++){//fill array
+        stringArray[i] = token.substring(i,i+1);        
+    }
+    if(stringArray[stringLength-1] != '$'){//check to see if $ was added to end
+        document.getElementById("demo").innerHTML = "Input string: " + token + " has errors found";
+        return;
+    }
+    begin(stringArray, token);
+}
+
+function begin(stringArray, token){//first step in checking the string
+    if(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3 
+                || stringArray[0] == '(' || stringArray[0] == ')' || stringArray[0] == '*' 
+                || stringArray[0] == '/' || stringArray[0] == '+' || stringArray[0] == '-'){//check for valid tokens
+        EXP(stringArray, token);
+        return;
+    }
+    else{
+        document.getElementById("demo").innerHTML = "Input string: " + token + " has errors found";
+    }
+}
+
+function EXP(stringArray, token){//function for expression
+    if(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3 
+                || stringArray[0] == '(' || stringArray[0] == ')' || stringArray[0] == '*' 
+                || stringArray[0] == '/' || stringArray[0] == '+' || stringArray[0] == '-'){//check for valid tokens
+        TERM(stringArray, token);
+        while(stringArray[0] == '+' || stringArray[0] == '-'){
+            stringArray.shift();
+            TERM(stringArray, token);
+            return;
+        }
+        return;
+    }
+    else{
+        document.getElementById("demo").innerHTML = "Input string: " + token + " has errors found";
+    }
+}
+
+function TERM(stringArray, token){
+    if(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3 
+                || stringArray[0] == '(' || stringArray[0] == ')' || stringArray[0] == '*' 
+                || stringArray[0] == '/' || stringArray[0] == '+' || stringArray[0] == '-'){//check for valid tokens
+        FACTOR(stringArray, token);
+        while(stringArray[0] == '*' || stringArray[0] == '/'){
+            stringArray.shift();
+            FACTOR(stringArray, token);
+            return;
+        }
+        return;
+    }
+    else{
+        document.getElementById("demo").innerHTML = "Input string: " + token + " has errors found";
+    }
+}
+
+function FACTOR(stringArray, token){
+    if(stringArray[0] == '('){
+        stringArray.shift();
+        EXP(stringArray, token);
+        if(stringArray[0] == ')'){
+            stringArray.shift();
+            if(stringArray[0] == '$'){
+                document.getElementById("demo").innerHTML = "Input string: " + token + " is valid";
+            }
+            else{
+                return;
+            }
+        }
+        return;
+    }
+    else if(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3){
+        DIGIT(stringArray, token);
+        while(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3){
+            alert("Going to DIGIT from FACTOR while loop")
+            DIGIT(stringArray, token);
+            alert("returned from DIGIT in FACTOR while loop");
+        }
+        if(stringArray[0] == '$'){
+            document.getElementById("demo").innerHTML = "Input string: " + token + " is valid";
+        }
+        return;
+    }
+    else{
+        document.getElementById("demo").innerHTML = "Input string: " + token + " has errors found";
+    }
+}
+
+function DIGIT(stringArray, token){
+    if(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3){
+        stringArray.shift();
+        if(stringArray[0] == 0 || stringArray[0] == 1 || stringArray[0] == 2 || stringArray[0] == 3){
+            document.getElementById("demo").innerHTML = "Input string: " + token + " has errors found";
+            var stringLength = stringArray.length;
+            for(var i=0;i<stringLength;i++){//clears rest of array to make sure return invalid
+                stringArray.shift();
+            }   
+        }
+        if(stringArray[0] == '$'){
+            document.getElementById("demo").innerHTML = "Input string: " + token + " is valid";
+        }
+        return;
+    }
+    else{
+        document.getElementById("demo").innerHTML = "String: " + token + " has errors";
+        stringArray.shift();
+    }
+}
+</script>
+    </body>
+</html>
