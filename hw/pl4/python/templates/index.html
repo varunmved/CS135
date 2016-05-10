@@ -1,10 +1,181 @@
+
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Recursive Descent Parser</title>
-    </head>
-    <body>
-        <h1>Recursive Descent Parser in python</h1>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Varun Ved's CS135 site</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/grayscale.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand page-scroll" href="#page-top">
+                    <i class="fa fa-play-circle"></i>  <span class="light">Start</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#about">About Me</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#download">PL Assignment 1</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#pl3">PL Assignment 3</a>
+                    </li>
+                    <li>
+                    <li>
+                        <a class="page-scroll" href="#pl4">PL Assignment 4</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Intro Header -->
+    <header class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <h1 class="brand-heading">Hi I'm Varun</h1>
+                        <p class="intro-text">Welcome to my CS135 site!</p>
+                        <a href="#about" class="btn btn-circle page-scroll">
+                            <i class="fa fa-angle-double-down animated"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>About Me!</h2>
+                <img class="img-responsive" src="img/nice_pepe.jpg" alt="Chania">
+                <br>
+                <br>
+                <p>I'm a junior at CSU Sacramento who transferred from community college this fall. I love all things tech, finance, cars, photography and sports. I started up a <a href = "http://datascience-sacstate.github.io/">Data Science club </a> here at Sac State to connect with like minded students and work on some cool projects together.</p> 
+                <p>I'm currently working as an intern at <a href="http://velocityvc.com/"> Velocity Venture Capital</a>, a VC here in Sacramento. Our goal is to grow the tech scene within the region and invest in exciting companies that solve a series of global challenges.</p> 
+                <p>This summer, I'll be working as a software engineering intern for the <a href="http://www.zillowgroup.com/">Zillow Group</a> in San Francisco, on the Agent Platform team at Trulia.</p>
+                <p>I also helped co-found <a href="https://www.airquail.us">AirQuail</a> on changing the way we interact with air quality. We were able to raise $100k in seed funding but didn't move forward with the investment, nevertheless, check us out!</p>
+                <p>Previously I interned at <a href="http://www.lumobodytech.com/">Lumo BodyTech</a> a wearable startup in Palo Alto, where I worked across the stack. I've also interned at <a href="htp://http://www.symsoftsolutions.com/">Symsoft Solutions</a> as well as <a href="http://signatacorp.com/">Signata Corp</a>.</p> 
+                <p>After graduating I want to work as a data scientist to solve problems with data pertaining to health. In my long term future, I want to work in venture capital, helping founders realize their vision and help make great companies.</b>
+                <p>My strongest programming language is Python, followed by Java and C. I can also be productive in C++ and JavaScript.</p>
+        <p>My biggest interests in computer science are based around machine learning and distributed systems. Most of my programming work within machine learning has been in python. I love the simplicity of the language and the plethora of libraries available. Within distributed systems, I've experimented writing MapReduce jobs on Hadoop, and setting up clusters with the HDFS.</p>
+                <p>I'm also picking up Golang so I can develop distributed applications. Go is great for this because of its strong concurrency model. One of my projects to pick up Go is writing a NoSQL database.</p> 
+        </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="content-section text-center">
+        <div class="download-section">
+            <div class="container">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <h2>PL Assignment 1</h2>
+                    <h5>Find and give a concise definition for the following:</h5>
+                    <p style="text-align:left"><a href="https://en.wikipedia.org/wiki/Syntax_(programming_languages)">Syntax</a>- the set of rules that defines the combinations of symbols that are considered to be a correctly structured document or fragment in that language</p>
+                    <p style="text-align:left"><a href="https://en.wikipedia.org/wiki/Semantics_(computer_science)">Semantics</a>- the meaning of syntactically legal strings defined by a specific programming language, showing the computation involved</p>
+                    <p style="text-align:left"><a href="https://en.wikipedia.org/wiki/Lexical_analysis">Lexical scanning</a>- the process of converting a sequence of characters (such as in a computer program or web page) into a sequence of tokens</p>
+                    <p style="text-align:left"><a href="https://en.wikipedia.org/wiki/Parsing">Parsing and parser</a>- the syntactic analysis of the input code into its component parts in order to facilitate the writing of compilers and interpreters.</p>
+
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!--pl3 section-->
+<section id="pl3" class="content-section text-center">
+    <div class="pl3-section">
+        <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                <h2>PL Assignment 3</h2>
+                <h5>Exam Problem Contribution</h5>
+                <p style="text-align:left">
+Facts:<br>
+likes(joey,pepe).<br>
+likes(matt,powerschool).<br>
+likes(david,fizzbuzz).<br>
+likes(brandon,spiderman).<br>
+likes(matt,spiderman).<br>
+likes(brandon,pepe).<br>
+likes(brandon,pepe).<br><br>
+
+Rules:<br>
+memer(X):-likes(X,pepe).<br>
+csu(X):-likes(X,spiderman).<br>
+csu(X):-likes(X,powerschool).<br>
+datascienceclub(X):-memer(X),csu(X).<br><br>
+
+Goals:<br>
+How many times is Brandon in datascience?<br>
+Is David in datascience?<br><br>
+
+Solutions:<br>
+aggregate_all(count, (datascienceclub(brandon)), Count).<br>
+datascienceclub(david).
+
+</p>
+<blockquote class="imgur-embed-pub" lang="en" data-id="a/Slh7I"><a href="//imgur.com/a/Slh7I">View post on imgur.com</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+</div>
+</div>
+</div>
+</section>
+
+<!--pl4 section-->
+<section id="pl4" class="content-section text-center">
+    <div class="pl4-section">
+        <div class="container">
+                    <div class="col-lg-8 col-lg-offset-2">
+                
+        <h2>Recursive Descent Parser in Python+flask</h2>
         <form action="/echo" method="POST">
             Enter a string to see if it's valid:<br>
             <input type="text" name="text" required><br>
@@ -13,5 +184,56 @@
             {%if text%}
             {{text}}
             {% endif %}
-    </body>
+</div>
+</div>
+</div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Contact Me</h2>
+                <p>Feel free to email me about internship opportunties, or to just say hello!</p>
+                <p><a href="mailto:varunmved@gmail.com">varunmved@gmail.com</a>
+                </p>
+                <ul class="list-inline banner-social-buttons">
+                    <li>
+                        <a href="https://twitter.com/vved123" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/varunmved" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+                    </li>
+                    <li>
+                        <a href="https://www.linkedin.com/pub/varun-ved/58/a62/67b" class="btn btn-default btn-lg"><i class="fa fa-linkedin fa-fw"></i> <span class="network-name">Linked In</span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <!--<div id="map"></div>-->
+
+    <!-- Footer -->
+    <footer>
+        <div class="container text-center">
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="js/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/grayscale.js"></script>
+
+</body>
+
 </html>
+
